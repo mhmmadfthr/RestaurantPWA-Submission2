@@ -1,0 +1,707 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-bar {
+    padding: 0 16px;
+    background-color: #76ABAE;
+    color: #76abab;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100%;
+}
+
+.app-bar .app-bar-menu {
+    display: flex;
+    align-items: center;
+}
+
+.app-bar .app-bar-menu button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    padding: 8px;
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.app-bar .app-bar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.app-bar .app-bar-brand h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color: #eeeeee;
+    white-space: nowrap;
+    text-decoration: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.app-bar .app-bar-navigation {
+    position: absolute;
+    top: 40px;
+    left: -180px;
+    width: 150px;
+    transition: all 0.3s;
+    padding: 8px;
+    background-color: #76ABAE;
+    overflow: hidden;
+}
+
+.app-bar .app-bar-navigation.open {
+    left: 0;
+}
+
+.app-bar .app-bar-navigation ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 0 8px;
+    font-size: 18px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.app-bar-navigation ul li a:hover {
+    color: #0b6455;
+}
+
+
+/* hero */
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 500px;
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(4, 9, 30, 0.7)), url('../public/images/heros/hero-image_1.jpg');
+    background-color: green;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-content {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.hero-title {
+    color: #fff;
+    font-size: 30px;
+}
+
+.hero-tagline {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    padding: 13px 25px 13px 25px;
+    outline: none;
+    text-decoration: none;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.hero-button:hover {
+    background-color: #76abae;
+    color: #fff;
+}
+
+.hero button:focus {
+    background-color: #76abae;
+    color: #fff;
+}
+
+
+/* Main Content */
+
+main {
+    flex: 1;
+}
+
+.content {
+    max-width: 56rem;
+    width: 100%;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.content .content-heading {
+    font-weight: normal;
+    text-align: center;
+}
+
+
+/* Restaurants */
+
+.restaurants {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 32px 0;
+}
+
+
+/* Restaurant Item */
+
+.restaurant-item {
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.restaurant-item-header {
+    position: relative;
+    border-radius: 5px;
+}
+
+.restaurant-item-header-poster {
+    object-fit: cover;
+    object-position: bottom;
+    width: 100%;
+    height: 16vw;
+    min-height: 200px;
+}
+
+.restaurant-item .restaurant-item-header .restaurant-item-header-location {
+    position: absolute;
+    padding: 8px;
+    bottom: 20px;
+    left: 0;
+    display: inline-block;
+    background-color: #1e1f22;
+    color: white;
+}
+
+.restaurant-item .restaurant-item-content {
+    padding: 0 16px 20px 16px;
+}
+
+.restaurant-item .restaurant-item-content h3 {
+    margin: 0 0 5px 0;
+}
+
+.restaurant-item .restaurant-item-content h3 a {
+    color: #000;
+    font-size: 19px;
+    text-decoration: none;
+    display: inline-block;
+    /* Pastikan elemen inline memiliki display inline-block untuk bisa mempengaruhi height */
+    min-width: 44px;
+    /* Atur lebar minimum */
+    min-height: 44px;
+    /* Atur tinggi minimum */
+    padding: 10px;
+}
+
+.restaurant-item .post-item__date {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.restaurant-item .post-item__date__author {
+    color: red;
+    text-decoration: none;
+}
+
+
+/* .restaurant-item .restaurant-item-content .rating {
+    color: #c4921a;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.restaurant-item .restaurant-item-content .rating span {
+    color: #1e1f22;
+    text-decoration: none;
+} */
+
+.restaurant-item .restaurant-item-content p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+
+/* Restaurant detail */
+
+.content-detail {
+    background-color: white;
+    padding: 32px;
+}
+
+.restaurant-detail {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    padding: 1.5rem 0;
+}
+
+.restaurant-detail-content {
+    padding: 0 16px;
+}
+
+.restaurant-detail-poster {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    margin: 0 auto;
+    max-width: 360px;
+}
+
+.restaurant-detail .restaurant-detail-title {
+    color: rgb(51, 100, 92);
+    margin-top: -10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.restaurant-detail .restaurant-detail-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.restaurant-detail-table tr {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    margin-top: 0.75rem;
+}
+
+.restaurant-detail-table tr th,
+.restaurant-detail-table tr td {
+    color: #579e9e;
+    text-align: start;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.restaurant-detail-table tr th {
+    font-size: 14px;
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+.restaurant-detail-table tr th>svg {
+    width: 1rem;
+    overflow: hidden;
+}
+
+.restaurant-detail-table tr td {
+    font-size: 0.875rem;
+}
+
+.restaurant-detail-description {
+    color: #579e9e;
+    margin-top: 24px;
+    font-size: 14px;
+    text-align: justify;
+}
+
+
+/* Menu restaurant */
+
+.restaurant-menu-title,
+.reviews-title {
+    font-size: 24px;
+    text-align: center;
+    color: rgb(51, 100, 92);
+}
+
+.restaurant-menu-subtitle {
+    margin-bottom: 16px;
+    font-size: 20px;
+    color: rgb(51, 100, 92);
+}
+
+.restaurant-menu-subtitle::after {
+    content: "";
+    width: 100%;
+    display: block;
+    height: 2px;
+    background-color: rgb(140, 196, 187);
+    margin-top: 0.25rem;
+}
+
+.restaurant-menu-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 16px 0;
+}
+
+.menu-item {
+    width: 100%;
+    box-shadow: 0 1px 4px 0 #102d2d;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #fff;
+    color: #579e9e;
+    padding: 16px 0;
+    text-align: center;
+}
+
+.menu-item-title {
+    font-size: 18px;
+}
+
+.reviews-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.review-title {
+    color: rgb(51, 100, 92);
+}
+
+.review-item {
+    box-shadow: 0 1px 4px 0 #102d2d;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    color: #579e9e;
+    padding: 0.75rem 1rem;
+    margin: 16px 0;
+}
+
+
+/* copy an */
+
+.review-item-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.review-item-name {
+    font-size: 0.75rem;
+    font-weight: 900;
+    margin-bottom: 0.25rem;
+}
+
+.review-item-date {
+    text-align: end;
+}
+
+.reviews-subtitle {
+    color: rgb(51, 100, 92);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.reviews-subtitle::after {
+    content: "";
+    width: 100%;
+    display: block;
+    height: 2px;
+    background-color: #579e9e;
+    ;
+    margin-top: 0.25rem;
+}
+
+.reviews-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-bottom: 32px;
+}
+
+.reviews-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.reviews-form-label {
+    color: #579e9e;
+    ;
+    font-size: 16px;
+}
+
+.reviews-form-input {
+    display: inline-block;
+    border-radius: 0.25rem;
+    border: 0 1px 4px 0 #579e9e;
+    padding: 16px;
+    font-size: 14px;
+    color: #548e8e;
+    min-width: 44px;
+}
+
+.reviews-form-input::placeholder {
+    color: #548e8e;
+}
+
+.reviews-form-input:focus {
+    outline: 2px solid #579e9e;
+}
+
+.reviews-form-submit {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #040909;
+    padding: 16px;
+    font-size: 16px;
+    color: white;
+    background-color: #4c9191;
+    cursor: pointer;
+    min-width: 44px;
+}
+
+.reviews-form-submit:focus {
+    outline: 2px solid #4c9199;
+}
+
+
+/* Footer */
+
+footer {
+    padding: 16px;
+}
+
+footer p {
+    text-align: center;
+    color: #aaaaaa;
+}
+
+footer p span {
+    color: #548e8e;
+}
+
+.skip-to-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #4c9191;
+    color: #fff;
+    padding: 3px 10px;
+    text-decoration: none;
+    font-size: 14px;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.skip-to-content:hover,
+.skip-to-content:focus {
+    opacity: 0.8;
+}
+
+.like {
+    font-size: 18px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    background-color: #76ABAE;
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#noFavoriteMessage {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    width: 30%;
+    border: 1px solid rgba(0, 186, 112, 0.2);
+    background-color: rgba(82, 253, 239, 0.2);
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#noFavoriteMessage p {
+    font-size: 18px;
+    color: rgb(4, 136, 94);
+    margin: 0;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 650px) {
+    .hero-title {
+        font-size: 32px;
+    }
+    .hero-tagline {
+        font-size: 18px;
+    }
+    .restaurant-item-header-poster {
+        width: 100%;
+        height: fit-content;
+    }
+    .restaurant-item .restaurant-item-content h3 a {
+        padding: 5px 0;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    .restaurant-detail {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .restaurant-detail-poster {
+        max-width: 100%;
+    }
+    .restaurant-detail-content {
+        padding: 0 8px;
+    }
+    .restaurant-detail-title {
+        text-align: center;
+        margin-top: 8px;
+    }
+    .menu-item-title {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .app-bar {
+        grid-template-columns: 1fr auto;
+        padding: 0 32px;
+    }
+    .app-bar .app-bar-brand h1 {
+        font-size: 1.5em;
+    }
+    .app-bar .app-bar-menu {
+        display: none;
+    }
+    .app-bar .app-bar-navigation {
+        position: static;
+        width: 100%;
+    }
+    .app-bar .app-bar-navigation ul li {
+        display: inline-block;
+    }
+    .app-bar.app-bar-navigation ul li a {
+        display: inline-block;
+        width: 120px;
+        margin: 0;
+        padding: 10px 15px;
+    }
+    .hero-title {
+        font-size: 28px;
+    }
+    .hero-tagline {
+        font-size: 18px;
+    }
+    .hero-button {
+        font-size: 16px;
+        padding: 10px 15px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    .restaurants {
+        grid-template-columns: 1fr 1fr;
+    }
+    .skip-to-content {
+        font-size: 12px;
+        padding: 0px 10px;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .restaurant-item-header-poster {
+        width: 100%;
+    }
+    .restaurant-detail {
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+    }
+    .restaurant-detail-table tr {
+        grid-template-columns: auto 1fr;
+        gap: 12px;
+    }
+    .restaurant-detail-poster {
+        max-width: none;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .app-bar .app-bar-brand h1 {
+        font-size: 20px;
+    }
+    .hero-title {
+        font-size: 36px;
+    }
+    .hero-tagline {
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .restaurants {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .restaurant-detail {
+        grid-template-columns: 0.4fr 0.6fr;
+        gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .hero {
+        min-width: 1000px;
+    }
+    main {
+        min-width: 1200px;
+    }
+    .restaurants {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .restaurants {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
